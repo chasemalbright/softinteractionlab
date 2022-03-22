@@ -114,3 +114,96 @@
 
 ####################################################
 
+# # Import libraries
+# import RPi.GPIO as GPIO
+# import time
+
+# # Set GPIO numbering mode
+# GPIO.setmode(GPIO.BCM)
+
+# # Set pin 11 as an output, and set servo1 as pin 11 as PWM
+# GPIO.setup(17,GPIO.OUT)
+# servo1 = GPIO.PWM(17,50) # Note 11 is pin, 50 = 50Hz pulse
+
+# #start PWM running, but with value of 0 (pulse off)
+# servo1.start(0)
+# print ("Waiting for 2 seconds")
+# time.sleep(2)
+
+# #Let's move the servo!
+# print ("Rotating 180 degrees in 10 steps")
+
+# # Define variable duty
+# # duty = 2
+
+# # # Loop for duty values from 2 to 12 (0 to 180 degrees)
+# # while duty <= 12:
+# #     servo1.ChangeDutyCycle(duty)
+# #     time.sleep(1)
+# #     duty = duty + 1
+
+# def spin():
+#     # Define variable duty
+#     duty = 2
+
+#     # Loop for duty values from 2 to 12 (0 to 180 degrees)
+#     while duty <= 12:
+#         servo1.ChangeDutyCycle(duty)
+#         time.sleep(1)
+#         duty = duty + 1
+    
+
+# x = 3
+# if x > 2:
+#     spin()
+
+# y = 'w'
+# if y == 'w':
+#     spin()
+# # Wait a couple of seconds
+# # time.sleep(2)
+
+# # # Turn back to 90 degrees
+# # print ("Turning back to 90 degrees for 2 seconds")
+# # servo1.ChangeDutyCycle(7)
+# # time.sleep(2)
+
+# # #turn back to 0 degrees
+# # print ("Turning back to 0 degrees")
+# # servo1.ChangeDutyCycle(2)
+# # time.sleep(0.5)
+# # servo1.ChangeDutyCycle(0)
+
+# #Clean things up at the end
+# servo1.stop()
+# GPIO.cleanup()
+# print ("Servo STPO")
+
+######################################################
+
+from gpiozero import Servo
+from time import sleep
+ 
+myGPIO=17
+ 
+servo = Servo(myGPIO)
+ 
+# while True:
+# servo.mid()
+# print("mid")
+# sleep(0.5)
+# servo.min()
+# print("min")
+# sleep(1)
+# servo.mid()
+# print("mid")
+# sleep(0.5)
+# servo.max()
+# print("max")
+# sleep(1)
+
+def spin():
+    servo.value = 1
+
+spin()
+print("hellofwfwe")
