@@ -20,11 +20,28 @@ GPIO.setup(EN_pin,GPIO.OUT) # set enable pin as output
 ###########################
 #
 GPIO.output(EN_pin,GPIO.LOW) # pull enable to low to enable motor
-mymotortest.motor_go(True, # True=Clockwise, False=Counter-Clockwise
+
+
+def motorCCW():
+    mymotortest.motor_go(False, # True=Clockwise, False=Counter-Clockwise
                      "Full" , # Step type (Full,Half,1/4,1/8,1/16,1/32)
                      770, # number of steps
                      .0005, # step delay [sec]
                      False, # True = print verbose output 
                      .05) # initial delay [sec]
+
+
+def motorCW():
+    mymotortest.motor_go(True, # True=Clockwise, False=Counter-Clockwise
+                     "Full" , # Step type (Full,Half,1/4,1/8,1/16,1/32)
+                     770, # number of steps
+                     .0005, # step delay [sec]
+                     False, # True = print verbose output 
+                     .05) # initial delay [sec]
+
+
+motorCW() # run the clockwise function
+time.sleep(2) # wait 2 seconds
+motorCCW() # run the counter clockwise function 
 
 GPIO.cleanup() # clear GPIO allocations after run
