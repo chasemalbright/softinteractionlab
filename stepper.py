@@ -44,4 +44,4 @@ motorCW() # run the clockwise function
 time.sleep(2) # wait 2 seconds
 motorCCW() # run the counter clockwise function 
 
-GPIO.cleanup() # clear GPIO allocations after run
+GPIO.cleanup() # clear GPIO allocations after run 
